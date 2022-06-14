@@ -1,8 +1,9 @@
 import Autor from "./autor";
 import Categoria from "./categoria";
+import ConteudoDAO from "./conteudoDAO";
 import Tag from "./tag";
 
-export default class Conteudo {
+export default class Conteudo implements ConteudoDAO {
   constructor(
     private _titulo: string,
     private _texto: string,
@@ -11,6 +12,22 @@ export default class Conteudo {
     private _autor?: Autor | undefined,
     private _tags?: Tag[]
   ) {}
+  salvar(conteudo: Conteudo): Conteudo {
+    // Tantão de código
+    return conteudo;
+  }
+  deletar(conteudo: Conteudo): number {
+    throw new Error("Method not implemented.");
+  }
+  atualizar(conteudo: Conteudo): Conteudo {
+    throw new Error("Method not implemented.");
+  }
+  listar(): Conteudo[] {
+    throw new Error("Method not implemented.");
+  }
+  buscarPorID(id: string): Conteudo {
+    throw new Error("Method not implemented.");
+  }
 
   public set autor(a: Autor | undefined) {
     this._autor = a;
